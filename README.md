@@ -1,15 +1,13 @@
-# Övningar med HTTP och webbserver
+# Övningar med HTTP requests
 
 ## Instruktioner
 
-1. Bygg en webbserver som när man går in på webbsidan (exempelvis localhost:8000) returnerar och visar texten **Stop, stop stop! You're going to take someone's eye out. Besides, you're saying it wrong. It's Levi-o-sa, not Levio-sar.**
+Fortsätt på din webbserver som du gjorde i föregående uppgift. I denna uppgift ska du skapa upp ett API som en klient ska kunna anropa. Ditt API ska i sin tur anropa ett annat API på [denna URL](http://shakespeare-insults-generator.herokuapp.com). Detta API har en endpoint **/getALL** som returnerar en array med 10 objekt och i varje objekt finns det två egenskaper **insult** och **play**.
 
-2. Ändra nu så att istället för ovanstående text så returneras en HTML-fil istället när man går in på webbsidan.
+Ditt API ska ha tre endpoints som ska kunna anropas från en klient med JavaScript.
 
-3. Lägg nu till så att även en css-fil läses in.
+**/getInsult**             - Returnera en slumpvis förolämpning. Ex. http://localhost:8000/api/getInsult
 
-4. Gör det möjligt att navigera på webbsidan mellan olika HTML-sidor.
+**/getAll**                - Returnera alla förolämpningar och pjäser. Ex. http://localhost:8000/api/getAll
 
-5. Lägg till en 404-sida om en användare försöker gå till en url som inte finns.
-
-6. Ifall man skriver i url:en **?givemesecret** så ska webbservern returnera ett slumpat lösenord till klienten. Detta ska man sedan kunna validera mot webbservern genom att skriva **/password=DITTLÖSENORD** och få ett svar från webbservern om det är korrekt. (Observera att man aldrig ska skriva lösenord i url:en detta är enbart för övning :) ).
+**/search?play=SÖKORD**    - Returnera alla förolämpningar från den sökta pjäsen. Ska även returnera om det inte finns något förolämpningar med den pjäsen. http://localhost:8000/api/search?play=Macbeth
